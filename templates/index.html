@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Packet Sender and Responder</title>
+</head>
+<body>
+    <h1>Send a Packet</h1>
+    <form method="POST">
+        {{ send_form.hidden_tag() }}
+        {{ send_form.ip_address.label }} {{ send_form.ip_address(size=20) }}<br>
+        {{ send_form.port.label }} {{ send_form.port(size=5) }}<br>
+        {{ send_form.protocol.label }} {{ send_form.protocol() }}<br>
+        {{ send_form.submit() }}
+    </form>
+
+    <h1>Respond to a Packet</h1>
+    <form method="POST">
+        {{ respond_form.hidden_tag() }}
+        {{ respond_form.incoming_ip.label }} {{ respond_form.incoming_ip(size=20) }}<br>
+        {{ respond_form.incoming_port.label }} {{ respond_form.incoming_port(size=5) }}<br>
+        {{ respond_form.answer_port.label }} {{ respond_form.answer_port(size=5) }}<br>
+        {{ respond_form.submit() }}
+    </form>
+</body>
+</html>

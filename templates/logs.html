@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Packet Logs</title>
+</head>
+<body>
+    <h1>Packet Logs</h1>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Source IP</th>
+            <th>Destination IP</th>
+            <th>Source Port</th>
+            <th>Destination Port</th>
+            <th>Protocol</th>
+            <th>Ping Back</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.timestamp | datetimeformat }}</td>
+            <td>{{ log.src_ip }}</td>
+            <td>{{ log.dest_ip }}</td>
+            <td>{{ log.src_port }}</td>
+            <td>{{ log.dest_port }}</td>
+            <td>{{ log.protocol }}</td>
+            <td>{{ log.ping_back }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
